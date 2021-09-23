@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	line-height: 24px;
+	font-weight: 400;
+	font-size: 14px;
+	color: #555e69;
+	background-repeat: no-repeat;
+  	background-attachment: fixed;
+	background-image: url("bg-section-tour.jpg");
+}
+.login_signup{
+	width: 100%;
+	height: 35px;
+}
+span.dropBottom,span.dropRight {
+	display: block;
+	box-shadow:inset 2px 0px 0px #FF9;
+	position: absolute;
+	left: 0px;
+	width:100%;
+	height: 100%;
+	top: 0px;
+}
+span.dropBottom {
+	box-shadow:inset 0px 2px 0px #FF9;
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+}
+h1 {
+	color:#EDEDED;
+  text-align:center;
+  font-family: 'Open Sans', sans-serif;
+  
+}
+.sticky {
+  margin-top: 2px;
+  margin-left: 17%;
+  position: fixed;
+  top: 0;
+  width: inherit;
+}
+/*-------*/
+nav {
+	z-index: 1;
+	position: relative;
+	display:table;
+	margin:auto auto;
+	padding:0 auto;
+	background:linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+}
+/*box-shadow:0px 2px 0px #023333;*/
+ul {
+	margin:0;
+	padding:0;
+	list-style:none;	
+}
+
+ul ul {
+	opacity:0;
+	position:absolute;
+	top:160%;
+	visibility:hidden;
+	transition:all .4s ease;
+	-webkit-transition:all .4s ease;
+}
+ul ul ul {
+	top:0%;
+	left:160%;
+}
+li {
+      position: relative;
+      border-radius: 50% / 10%;
+      color: white;
+      text-align: center;
+      text-indent: .1em;
+	  background: inherit;
+    }
+
+ul ul li:hover > ul {
+	top:0%;
+	left:100%;
+	opacity:1;
+	visibility:visible;
+}
+ul li:hover > ul {
+	opacity:1;
+	top:100%;
+	visibility:visible;
+}
+ul li {
+	float:left;
+	position:relative;
+}
+ul ul li {
+	float:none;
+}
+ul li {
+	background: linear-gradient(90deg, rgba(255, 255, 255,0.5)8%, rgba(255, 255, 255,0.7)17%, rgba(255, 255, 255,0.7) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255,1);
+	cursor: pointer;
+}
+ul a {
+	text-decoration:none;
+	display:block;
+	font-size: 20px;
+	color:rgba(31, 13, 13, 0.9);
+	padding:10px 15px;
+	width:6em;
+	text-align:center;
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: 0px -1px 0px rgba(0,0,0,.2);
+}
+ul ul li {
+background-color: beige;
+}
+ul ul li a{
+	font-size:18px;
+	width: 15em;
+	margin: 0px;
+	
+}
+
+nav:active {
+  transform: translateY(3px);
+}
+nav::after, button::before {
+  border-radius: 3px;
+}
+ul li:hover {
+z-index:0;
+display: block;
+position:relative;
+content: '';
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(110, 102, 102, 0.6);
+background: rgba(172, 155, 155, 0.8);
+color: rgba(236, 237, 241);
+}
+ul li a:hover:before {
+	content: '';
+    background: linear-gradient(45deg, #ceb04f, #ecbf9a, #fffd83, #b6e2a4, #8ce0d4, #ced2e6, #ac95c5, #e29bd3, #ee7979);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 1;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  	color: rgba(0, 35, 122);
+}
+
+/*
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after
+*/
+ul li a:hover:after {
+    z-index: +1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+	background: rgba(255, 255, 255, 0.1);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+#myVideo {
+  position:absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height:750px;
+}
+.vidContain {
+    min-width: 100%;
+    position:relative;
+    display:inline-block;
+}
+.vid {
+    position: absolute; 
+    top: 0; left:0;
+    width: 100%; height: 100%; 
+    z-index: -1;
+} 
+
+.content_center{ 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 20px;
+  padding-top:3%;
+  color: rgb(255, 255, 255);
+}
+/*--------button-----*/
+.button {
+  position:relative;
+  margin-top:5%;
+  padding-top:8px;
+  padding-bottom:0;
+  padding-right: 0px;
+  border-radius:25px;
+  border: 1px solid #ffffff;
+  width:230px;
+  height:30px;
+  text-decoration: none;
+  background-color:rgba(195, 185, 185,0.1);
+  margin: auto;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+}
+.button_text{
+  padding-bottom:-5px ;
+  margin-left:30px;
+  text-align: center;
+}
+.icon_botton{
+  position:absolute;
+  margin-left:-23px;
+  margin-top: -5px;
+  border-radius: 50%;
+  height:30px;
+  width: 30px;
+  border: 1px solid #ffffff;
+}
+.button_text_click{
+	display: none;
+}
+/*------**/
+.button:active {
+  transform: translateY(3px);
+}
+.button::after, button::before {
+  border-radius: 3px;
+}
+/*---------*/
+.button:hover .icon_botton{
+  animation: linear;
+  animation-name: run;
+  animation-duration:1s;
+}
+.button:hover{
+ width: 200px;
+ padding-left: 3px;
+}
+.button:hover .button_text{
+ display: none;
+}
+.button:hover .button_text_click{
+	display: block;
+	float: left;
+	padding-left: 50px;
+	padding-right:43px;
+}
+@keyframes run {
+  0% {
+    left: 0;
+  }
+  50% {
+    left:93%;
+  }
+}
+.shop_head{
+	margin-top:20px;
+	font-size: 20px;
+	position: relative;
+    flex: 33.33%;
+}
+.SHOP_ele{
+	position:absolute;
+	float: left;
+    width: 1150px;
+    height:250px;
+	border-radius: 90% / 10%;
+    margin-left:-1025px;
+	color: #000;
+}
+.SHOP_ele:hover{
+	z-index: 0;
+	background-color: rgb(241, 240, 240);
+	color: #000;
+}
+.color_try{
+	background-color: rgb(221, 90, 90);
+	color: #000;
+}
+.shop_list_ele{
+	margin-top: 5px;
+	margin-bottom:5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-bottom:1px solid rgb(226, 219, 115);
+	font-size: 16px;
+}
+.shop_list_ele:hover{
+	background-color: rgba(170, 166, 166,0.2);
+}
+.widget_list{
+height:70px;
+color: #000;
+margin-top: 5px;
+margin-bottom:5px;
+padding-top: 5px;
+padding-bottom: 5px;
+border-bottom:1px solid rgb(226, 219, 115);
+font-size: 16px;
+}
+.widget_list:hover{
+	background-color: rgba(189, 181, 181,0.3);
+}
+/*--shop--*/
+
+/*exploore*/
+.exploore{
+	z-index:0;
+	width: 100%;
+	height: 500px;
+	background-color: rgb(248, 248, 248);
+}
+.exploore_margib{
+	margin-inline: 22%;
+}
+.exploore_button{
+	margin: auto;
+}
+.exploore_button:hover{
+	background-color: rgba(172, 155, 155, 0.8);
+}
+
+/*---explore*/
+
+/*----*/
+#myimage {
+  position:absolute;
+  z-index: -1;
+  margin-left:-8px;
+  min-width:100%;
+  height: 452px;
+}
+/*---*/
+/*---hotel---*/
+.hotel_div{
+	display:flex;
+	background-color:rgb(255, 254, 254);
+	height:270px; 
+	width: 550px;
+}
+.hotel_image{
+flex:54%;
+position:relative;
+overflow: hidden;
+width:54%;
+height: 270px;
+z-index:0;
+background-color: transparent;
+}
+.hotel_anime{
+	z-index: -1;
+	width:100%;
+	height: 100%;
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+}
+.hotel_div:hover .hotel_anime {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.explore_button_hotel{
+background-color:rgba(0, 0, 0,0.8);
+}
+.explore_button_hotel:hover{
+	background-color: rgb(87, 199, 68);
+}
+.column {
+    position: relative;
+    flex: 33.33%;
+    padding: 5px;
+    height: 600px;
+
+}
+.row {
+    display: flex;
+	width: inherit;
+}
+    </style>
+</head>
+<body>
+	<header>
+		<div >
+			<video autoplay muted loop id="myVideo">
+				<source src="Mountain.mp4" type="video/mp4">
+			  </video>
+			  
+		</div>
+	<div  class="login_signup" >
+		<ul style="border-top:1px solid rgb(189, 187, 187);">
+		<li style="border-left:1px solid rgb(189, 187, 187);  margin-left:10%; color: rgb(0, 0, 0);">
+			<span style="border-right:1px solid rgb(189, 187, 187);">+91 9690286930</span>
+		</li>
+		<li style="border-left:1px solid rgb(189, 187, 187);  margin-left:65%; color: rgb(0, 0, 0);">
+			<span style="border-right:1px solid rgb(189, 187, 187); padding-inline:2px;">Login</span>
+			<span style="border-right:1px solid rgb(189, 187, 187); padding-inline:2px;">Register</span>
+		</li>
+		
+	</ul>
+
+
+	</div>
+	<div id="nav_custume" >
+	<nav id="navbar">
+		<ul class="menu">
+			<li><a href="#">HOME</a><span class="dropBottom"></span></li>
+			<li><a href="#">TOUR</a>
+				<ul>
+					<li><a href="#">Tour Search</a><span class="dropRight"></span>
+						<ul>
+							<li><a href="#">Photoshop</a></li>
+							<li><a href="#">Illustrator</a></li>
+							<li><a href="#">Web Design</a><span class="dropRight"></span>
+								<ul>
+									<li><a href="#">XTHML</a></li>
+									<li><a href="#">CSS</a></li>
+									<li><a href="#">JavaScript</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="#">Tour List</a></li>
+					<li><a href="#">Tour View</a></li>
+					<li><a href="#">Tour View & Deposit Mode</a></li>
+					<li><a href="#">Tour Map</a></li>
+					<li><a href="#">Tour With Different Price</a></li>
+					<li><a href="#">Book Tour With Contach Form</a></li>
+					<li><a href="#">Booking Tour Status</a></li>
+				</ul>
+			</li>
+			<li><a href="#">HOTLELS</a>
+				<ul>
+					<li><a href="#">Hotels Search</a></li>
+					<li><a href="#">Hotels List</a></li>
+					<li><a href="#">Hotels Grid</a></li>
+					<li><a href="#">Hotels View</a></li>
+					<li><a href="#">Hotel View & Deposit Mode</a></li>
+					<li><a href="#">Hotels Map</a></li>
+					<li><a href="#">Hotels With Different Price</a></li>
+					<li><a href="#">Book Hotel With Contach Form</a></li>
+					<li><a href="#">Booking Hotel Status</a></li>
+				</ul>
+			</li>
+			<li><a href="#">SERVICE</a>
+				<ul>
+				<li><a href="#">Car Rents</a>
+					<ul>
+						<li><a href="#">Car Rent Search</a></li>
+						<li><a href="#">Car Rent List</a></li>
+						<li><a href="#">Car Rent View</a></li>
+						<li><a href="#">Car View & Deposit Mode</a></li>
+						<li><a href="#">Car Rent Map</a></li>
+						<li><a href="#">Car With Different Price</a></li>
+						<li><a href="#">Book Car With Contach Form</a></li>
+						<li><a href="#">Booking Car  Status</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Cruise</a>
+					<ul>
+						<li><a href="#">Cruise Search</a></li>
+						<li><a href="#">Cruise List</a></li>
+						<li><a href="#">Cruise View</a></li>
+						<li><a href="#">Cruise View & Deposit Mode</a></li>
+						<li><a href="#">Cruise Map</a></li>
+						<li><a href="#">Cruise With Different Price</a></li>
+						<li><a href="#">Book Cruise With Contach Form</a></li>
+						<li><a href="#">Booking Cruise  Status</a></li>
+					</ul>
+				</li>
+			</ul>
+			</li>
+			<li><a href="#">BLOG</a>
+				<ul>
+					<li><a href="#">Blog List</a></li>
+					<li><a href="#">Blog Details</a></li>
+				</ul>
+			</li>
+			<li><a href="#">PAGES</a>
+				<ul>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Team Detail</a></li>
+					<li><a href="#">FAQ</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">Register</a></li>
+					<li><a href="#">Login</a></li>
+				</ul>
+			</li>
+			<li><a href="#">ELEMENT</a></li>
+			<li  ><a href="#">SHOP</a>
+				<ul class="SHOP_ul">
+					<li class="SHOP_ele">
+						<span style="background-color: solid rgba(218, 235, 72, 0.575);">
+							<dl style="display:flex; border-top:5px solid rgba(228, 217, 70, 0.8);">
+								<dt class="shop_head" style="float: left;"><span>Featured</span> 
+								<dl style="border-top:1px solid rgba(20, 20, 20, 0.575); margin-inline: 3px;" >
+									<dt  class="shop_list_ele" >Shop Item 1</dt>
+									<dt  class="shop_list_ele">Shop Item 2</dt>
+									<dt  class="shop_list_ele">Shop Item 3</dt>
+									<dt  class="shop_list_ele">Shop Item 4</dt>
+									<dt  class="shop_list_ele">Shop Item 5</dt>
+								</dl>
+							</dt>
+								<dt class="shop_head" style="float: left;"><span>Shop Page</span>
+									<dl style="border-top:1px solid rgba(20, 20, 20, 0.575);">
+										<dt class="shop_list_ele" >Product Details</dt>
+										<dt class="shop_list_ele" >My Account</dt>
+										<dt class="shop_list_ele" >Wish List</dt>
+										<dt class="shop_list_ele" >Shopping Cart</dt>
+										<dt class="shop_list_ele" >Check Out</dt>
+									</dl>
+								</dt>
+
+								<dt class="shop_head" ><span>Widgets</span>
+									<dl style="border-top:1px solid rgba(20, 20, 20, 0.575); margin-inline: 3px; ">
+										<dt class="widget_list" >
+											<span style="float: left; padding-left:20%;">
+											<img src="shop_cap_1.jpg" height="50" width="50"/>
+												<span style="position: absolute; margin-left: 1px; padding-left: 1px; padding-bottom: 10px;">Best Chicago Gift<br/><span style="text-decoration: line-through;">Rs 350 </span>
+												<br/><span style="color: rgb(87, 199, 68);">Rs 250 </span>
+											</span>
+										</span>
+										</dt>
+										<dt class="widget_list">
+											<span style="float: left; padding-left:20%;">
+												<img src="shop_lady_bag_1.jpg" alt="" height="50" width="50">
+													<span style="position: absolute; margin-left: 1px; padding-left: 1px; padding-bottom: 10px;">Beatiful Souvenir<br/><span style="text-decoration: line-through;">Rs 781 </span>
+													<br/><span style="color: rgb(87, 199, 68);">Rs 559 </span>
+												</span>
+											</span>
+										</dt>	
+	
+									</dl>
+								</dt>
+							  </dl>
+							  </span>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	</div>
+	<div >
+		<p style="text-align:center; margin-top:8%">
+		<img src="logo-1.png"  width="280" height="90"/></p>
+	<div class="content_center">
+		<div>
+		<h1>DISCOVER</h1>
+		<p>The world you have never seen</p>
+		</div>
+		<!-- Use a button to pause/play the video with JavaScript -->
+		<div class="button" role="button">
+			<icon class="icon_botton"  style="color: rgba(255, 255, 255,1);" ><img style="padding-top:3px;" src="next.png" width="20" height="20"></icon>
+		    <a  href="#"  style="text-decoration: none;">	
+			<span class="button_text" style="position:relative; color: rgba(255, 255, 255,1); font-size:16px">GO EXPLORE NOW</span>
+			<span class="button_text_click" style="position:relative; color: rgba(255, 255, 255,1); font-size:16px">CLICK ME</span>
+		</a>
+		</div>
+	</div>
+	  </div>
+</header>
+<div style="height:383px;" >
+</div>
+<!--Explore-->
+<div >
+<div class="exploore">
+	<div class="exploore_margib" style="display: flex;">
+		<div style="flex:70%;"> <p style="
+			color: #6e747c;
+			text-transform: uppercase;
+			display: inline-block;
+			margin-bottom: 0;
+			padding-top:80px; font-family: 'Roboto', Helvetica, Arial, sans-serif;
+			line-height: 24px;
+			font-weight: 400;
+			font-size: 14px;">Be Born Again</p>
+			<i style="width: 100px; height: 24px; border-bottom:2px solid #ffdd00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>	
+	<div style="width:652.5px;  position: relative;">
+	<h3 style="
+	color: rgb(0, 0, 0);
+	font-size: 30px;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 1px;
+	box-sizing: border-box;
+    font-family:sans-serif;
+	font-weight: 500;
+	line-height: 1.1;
+	margin: 5px 0 0 0;text-align: left;">We are exploore</h3>
+	<div style="font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	line-height: 24px;
+	font-weight: 400;
+	font-size: 14px;
+	color: #555e69;">
+	<p >Consectetur adipiscing elit, sed tempor and vitality, so that the labor and sorrow, some important things to do eiusmod. In order to eim the years all will I come, who shall nostrud exercise, so that stimulus efforts if the school district school district aliquip stimulus efforts if the pain is at an advantage in the photography appeared insurmountable, however, condemns irure</p>
+	<div style="display: flex; margin-top:-10px; font-size: 14px;">
+	<dl style="flex: 33.33;">
+		<dt><img src="transparent-arrow-icon-19.jpg" style="margin-bottom:-4px; height: 20px; height: 20px; margin-right: 5px;">First Class Flights</dt>
+		<dt><img src="transparent-arrow-icon-19.jpg" style="margin-bottom:-4px; height: 20px; height: 20px; margin-right: 5px;">5 Star Accommodations</dt>
+		<dt><img src="transparent-arrow-icon-19.jpg" style="margin-bottom:-4px; height: 20px; height: 20px; margin-right: 5px;">Inclusive Packages</dt>
+		<dt><img src="transparent-arrow-icon-19.jpg" style="margin-bottom:-4px; height: 20px; height: 20px; margin-right: 5px;">Latest Model Vehicles</dt>
+	</dl>
+ 
+	<dl style="flex: 33.33;">
+		<dt><img src="transparent-arrow-icon-19.jpg" style="margin-bottom:-4px; height: 20px; height: 20px; margin-right: 5px;">Handpicked Hotels</dt>
+		<dt><img src="transparent-arrow-icon-19.jpg" style="margin-bottom:-4px; height: 20px; height: 20px; margin-right: 5px;">Accesibility managment</dt>
+		<dt><img src="transparent-arrow-icon-19.jpg" style="margin-bottom:-4px; height: 20px; height: 20px; margin-right: 5px;">10 Languages available</dt>
+		<dt><img src="transparent-arrow-icon-19.jpg" style="margin-bottom:-4px; height: 20px; height: 20px; margin-right: 5px;">+120 Premium city tours</dt>
+	</dl> 
+	<dl style="flex: 33.33;">
+		<dt><img src="transparent-arrow-icon-19.jpg" style="margin-bottom:-4px; height: 20px; height: 20px; margin-right: 5px;">Accesibility managment</dt>
+		<dt><img src="transparent-arrow-icon-19.jpg" style="margin-bottom:-4px; height: 20px; height: 20px; margin-right: 5px;">+120 Premium city tours</dt>
+		<dt><img src="transparent-arrow-icon-19.jpg" style="margin-bottom:-4px; height: 20px; height: 20px; margin-right: 5px;">Handpicked Hotels</dt>
+		<dt><img src="transparent-arrow-icon-19.jpg" style="margin-bottom:-4px; height: 20px; height: 20px; margin-right: 5px;">10 Languages available</dt>
+	</dl> 
+</div>
+ <div class="button exploore_button" role="button" style="float: left;">
+	<a  href="#"  style="text-decoration: none; ">	
+	<span  style="position:relative; color: rgb(15, 15, 15); font-size:16px; margin-left: 20%; text-transform: uppercase;">Purchase Now</span>
+	</a>
+</div>
+<div class="button exploore_button" role="button" style="float: left;">
+	<a  href="#"  style="text-decoration: none; ">	
+	<span  style="position:relative; color: rgb(15, 15, 15); font-size:16px; margin-left: 20%; text-transform: uppercase;">Explore Now</span>
+	</a>
+</div>
+</div>
+</div>	
+</div>
+<div style="flex: 30%; padding-top:100px; ">
+	<img src="explore_prev_ui.png">
+</div>
+</div>
+</div>
+</div>
+<!--Explore end-->
+
+<!---->
+<div>
+	<div class="exploore" style="background-color: transparent; height:960px;">
+		<div class="exploore_margib" >
+	 <p style="
+		color: #6e747c;
+		text-transform: uppercase;
+		display: inline-block;
+		margin-bottom: 0;
+		padding-top:80px; font-family: 'Roboto', Helvetica, Arial, sans-serif;
+		line-height: 24px;
+		font-weight: 400;
+		font-size: 14px;">Pack And Go</p>
+		<i style="width: 100px; height: 24px; border-bottom:2px solid #ffdd00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>	
+<div style="width:652.5px;  position: relative;">
+<h3 style="
+color: rgb(0, 0, 0);
+font-size: 30px;
+text-transform: uppercase;
+font-weight: bold;
+letter-spacing: 1px;
+box-sizing: border-box;
+font-family:sans-serif;
+font-weight: 500;
+line-height: 1.1;
+margin: 5px 0 0 0;text-align: left;">Awesome Tours</h3>
+</div>
+</div>
+</div>
+</div>
+<!---->
+<div >
+<img src="bg-section-videos.jpg" id="myimage" >
+<div class="exploore_margib" style="display:flex">
+	<div style="flex:50%;  color:rgb(255, 255, 255);">
+		<h5 style="margin: 0 0 8px 0;
+		font-size: 18px;
+		display: inline-block;
+		text-transform: uppercase;
+		border-bottom: 1px solid #fff;
+		padding-top:80px; " >it’s a <strong style="font-size:24px; font-weight: 700px;">big world</strong> out there</h5>
+		<p style="margin-top:20px;
+		display: block;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 55px;
+		">Go Explore</p>
+		<div style="margin-top:-25px">There are many variations of passages of. Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don’t look.</div>
+		<div class="button exploore_button" role="button" style="float: left; margin-top: 20px;width:180px;">
+			<a  href="#"  style="text-decoration: none; ">	
+			<span  style="position:relative; color: rgb(255, 255, 255); font-size:16px;margin-left: 20%; text-transform: uppercase;">Read More</span>
+			</a>
+		</div>
+	</div>
+	<div style="flex:50%;">
+		<div style="position: relative;
+		padding-top:80px;
+		min-height: 1px;
+		padding-right: 15px;
+		padding-left: 15px;"></div>
+		<img src="video-bg.jpg"/>
+	</div>
+</div>
+</div>
+<!-- hotel -->
+<div class="" style="width:100%; height:1250px;background-color: rgb(236, 232, 232); margin-top:-45px;" >
+		<div class="exploore_margib" >
+	 <p style="
+		color: #6e747c;
+		text-transform: uppercase;
+		display: inline-block;
+		margin-bottom: 0;
+		padding-top:80px; font-family: 'Roboto', Helvetica, Arial, sans-serif;
+		line-height: 24px;
+		font-weight: 400;
+		font-size: 14px;">Guaranteed Quality</p>
+		<i style="width: 100px; height: 24px; border-bottom:2px solid #ffdd00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>	
+<div style="width:652.5px;  position: relative;">
+<h3 style="
+color: rgb(0, 0, 0);
+font-size: 30px;
+text-transform: uppercase;
+font-weight: bold;
+letter-spacing: 1px;
+box-sizing: border-box;
+font-family:sans-serif;
+font-weight: 500;
+line-height: 1.1;
+margin: 5px 0 0 0;text-align: left;">Recommended Hotels</h3>
+</div>
+<div style="margin-top: 5%;">
+	<div style="display:flex;">
+	<!--hotel 1-->	
+	<div style="flex:50%; width: 550px;" >
+	<div class="hotel_div" >
+		<div class="hotel_image" >
+		<img class="hotel_anime" src="hotelbeauti-800x540.jpg" />
+		</div>
+		<div style="
+		flex:56%;
+		overflow: hidden;
+		width:inherit;
+		height: 270px; ">
+		<div style="padding: 50px 70px 0 25px;
+		text-align: center;  ">
+		<div style="height: 100%; width:100%; color: rgb(87, 199, 68);">
+		<sup style="font-size: 16px; font-weight: bold;
+		position:relative;
+		top: -16px;
+		left: -2px;
+		">₹</sup>
+		<span style="font-size: 36px;
+		font-weight: bold;font-family:'Roboto', Helvetica, Arial, sans-serif;">1,200 </span>
+		</div>
+		<p style="margin-top:-5px;">per night</p>
+		<div style="max-height: 96px;
+		overflow: hidden;
+		text-align: left;">
+			Lorem ipsum carrots, enhanced rebates, but they do such times
+		</div>
+		<div class="button explore_button_hotel" role="button" style="float: left; margin-top: 20px;width:160px; margin-left: 10%;">
+			<a  href="#"  style="text-decoration: none; ">	
+			<span  style="position:relative; color: rgb(255, 255, 255); font-size:16px; ">Read More</span>
+			</a>
+		</div>
+	</div>
+		</div>
+	</div>		
+<!--hotel 2-->
+
+<div style="position:relative; margin-top: 5px;">
+	<div class="hotel_div" >
+		<div class="hotel_image" >
+		<img class="hotel_anime" src="280821-800x540.jpg" />
+		</div>
+		<div style="
+		flex:56%;
+		overflow: hidden;
+		width:inherit;
+		height: 270px; ">
+		<div style="padding: 50px 70px 0 25px;
+		text-align: center;  ">
+		<div style="height: 100%; width:100%; color: rgb(87, 199, 68);">
+		<sup style="font-size: 16px; font-weight: bold;
+		position:relative;
+		top: -16px;
+		left: -2px;
+		">₹</sup>
+		<span style="font-size: 36px;
+		font-weight: bold;font-family:'Roboto', Helvetica, Arial, sans-serif;">2,700 </span>
+		</div>
+		<p style="margin-top:-5px;">per night</p>
+		<div style="max-height: 96px;
+		overflow: hidden;
+		text-align: left;">
+			Lorem ipsum carrots, enhanced rebates, but they do such times
+		</div>
+		<div class="button explore_button_hotel" role="button" style="float: left; margin-top: 20px;width:160px; margin-left: 10%;">
+			<a  href="#"  style="text-decoration: none; ">	
+			<span  style="position:relative; color: rgb(255, 255, 255); font-size:16px; ">Read More</span>
+			</a>
+		</div>
+	</div>
+		</div>
+	</div>	
+</div>
+	</div>
+		<!--hotel 3-->
+		<div style="flex:50%; width: 550px; margin-left: 5px;" >
+			<div class="hotel_div" >
+				<div class="hotel_image" >
+				<img class="hotel_anime" src="316_langham_modern_Exterior-800x540.jpg" />
+				</div>
+				<div style="
+				flex:56%;
+				overflow: hidden;
+				width:inherit;
+				height: 270px; ">
+				<div style="padding: 50px 70px 0 25px;
+				text-align: center;  ">
+				<div style="height: 100%; width:100%; color: rgb(87, 199, 68);">
+				<sup style="font-size: 16px; font-weight: bold;
+				position:relative;
+				top: -16px;
+				left: -2px;
+				">₹</sup>
+				<span style="font-size: 36px;
+				font-weight: bold;font-family:'Roboto', Helvetica, Arial, sans-serif;">850</span>
+				</div>
+				<p style="margin-top:-5px;">per night</p>
+				<div style="max-height: 96px;
+				overflow: hidden;
+				text-align: left;">
+					Lorem ipsum carrots, enhanced rebates, but they do such times
+				</div>
+				<div class="button explore_button_hotel" role="button" style="float: left; margin-top: 20px;width:160px; margin-left: 10%;">
+					<a  href="#"  style="text-decoration: none; ">	
+					<span  style="position:relative; color: rgb(255, 255, 255); font-size:16px; ">Read More</span>
+					</a>
+				</div>
+			</div>
+				</div>
+			</div>		
+		<!--hotel 4-->
+		
+		<div style="position:relative; margin-top: 5px;">
+			<div class="hotel_div" >
+				<div class="hotel_image" >
+				<img class="hotel_anime" src="hanoi-top-luxury-hotel-800x540.jpg" />
+				</div>
+				<div style="
+				flex:56%;
+				overflow: hidden;
+				width:inherit;
+				height: 270px; ">
+				<div style="padding: 50px 70px 0 25px;
+				text-align: center;  ">
+				<div style="height: 100%; width:100%; color: rgb(87, 199, 68);">
+				<sup style="font-size: 16px; font-weight: bold;
+				position:relative;
+				top: -16px;
+				left: -2px;
+				">₹</sup>
+				<span style="font-size: 36px;
+				font-weight: bold;font-family:'Roboto', Helvetica, Arial, sans-serif;">3,100 </span>
+				</div>
+				<p style="margin-top:-5px;">per night</p>
+				<div style="max-height: 96px;
+				overflow: hidden;
+				text-align: left;">
+					Lorem ipsum carrots, enhanced rebates, but they do such times
+				</div>
+				<div class="button explore_button_hotel" role="button" style="float: left; margin-top: 20px;width:160px; margin-left: 10%;">
+					<a  href="#"  style="text-decoration: none; ">	
+					<span  style="position:relative; color: rgb(255, 255, 255); font-size:16px; ">Read More</span>
+					</a>
+				</div>
+			</div>
+				</div>
+			</div>	
+		</div>
+			</div>
+	<!--hotel end -->
+	</div>
+	</div>
+	</div>
+</div>
+
+</div>
+</body>
+<script>
+window.onscroll = function() {myFunction()};
+//document.body
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky");
+	console.log("lool");
+  }
+  else{
+	navbar.classList.remove("sticky");
+  }
+}
+</script>
+</html>
